@@ -18,8 +18,13 @@
             </div>
             <div class="media__body profile-header__main">
               <h1>
+              {% if udoc['displayName'] %}
+                {{ udoc['displayName'] }}
+                <small>({{ udoc['uname'] }}, {{ _('UID') }}: {{ udoc['_id'] }})</small>
+              {% else %}
                 {{ udoc['uname'] }}
                 <small>({{ _('UID') }}: {{ udoc['_id'] }})</small>
+              {% endif %}
               </h1>
               <p>
                 {{ _('Registered at') }} {{ datetimeSpan(udoc['regat'])|safe }},
