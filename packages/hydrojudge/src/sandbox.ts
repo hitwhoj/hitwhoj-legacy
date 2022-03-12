@@ -47,7 +47,7 @@ function proc({
         realCpuLimit: Math.floor(time * 3000 * 1000 * rate),
         memoryLimit: Math.floor(memory * 1024 * 1024),
         strictMemoryLimit: getConfig('strict_memory'),
-        // stackLimit: memory * 1024 * 1024,
+        stackLimit: Math.floor(memory * 1024 * 1024),
         procLimit: process_limit,
         copyIn,
         copyOut,
